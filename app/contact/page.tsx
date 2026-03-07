@@ -103,7 +103,7 @@ export default function ContactPage() {
                         Our Location
                       </h3>
                       <p className="text-gray-300">
-                        123 Tech Street, Silicon Valley, CA 94043, USA
+                        308, Kaveri Enclave, Somasundarapalya Main Rd, ITI Layout, 7th Sector, Reliable Tranquil Layout, Bengaluru, Karnataka 560102
                       </p>
                     </div>
                   </div>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                       <h3 className="text-white font-semibold mb-1">
                         Phone Number
                       </h3>
-                      <p className="text-gray-300">+1 (555) 123-4567</p>
+                      <p className="text-gray-300">+91 93446 27455</p>
                     </div>
                   </div>
 
@@ -124,7 +124,7 @@ export default function ContactPage() {
                       <h3 className="text-white font-semibold mb-1">
                         Email Address
                       </h3>
-                      <p className="text-gray-300">info@nextwestudio.com</p>
+                      <p className="text-gray-300">support@nextwestudio.com</p>
                     </div>
                   </div>
                 </div>

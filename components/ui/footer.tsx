@@ -191,7 +191,7 @@ export function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-[#a0ff4a] mr-3 mt-1 flex-shrink-0" />
                 <span className="text-gray-300">
-                  8 Gerizim, Nermai nagar 1st street, Chennai, Tamil Nadu 600099
+                  308, Kaveri Enclave, Somasundarapalya Main Rd, ITI Layout, 7th Sector, Reliable Tranquil Layout, Bengaluru, Karnataka 560102
                 </span>
               </li>
               <li className="flex items-center">
@@ -200,7 +200,7 @@ export function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-[#a0ff4a] mr-3 flex-shrink-0" />
-                <span className="text-gray-300">leroypinto1977@gmail.com</span>
+                <span className="text-gray-300">support@nextwestudio.com</span>
               </li>
             </ul>
           </motion.div>

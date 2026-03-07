@@ -173,7 +173,7 @@ export function BoldCTASection() {
               {
                 icon: Mail,
                 title: "Email Us",
-                content: "leroy.xanitus@gmail.com",
+                content: "support@nextwestudio.com",
                 action: "Detailed project discussions",
               },
               {
