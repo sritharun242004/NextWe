@@ -14,20 +14,20 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [fadeOut, setFadeOut] = useState(false)
 
   useEffect(() => {
-    // Show text after 1 second (during spiral animation)
+    // Show text after 0.5 seconds
     const textTimer = setTimeout(() => {
       setShowText(true)
-    }, 1000)
+    }, 500)
 
-    // Start fade out after 15 seconds total (let galaxy fully complete)
+    // Start fade out after 5.5 seconds
     const fadeTimer = setTimeout(() => {
       setFadeOut(true)
-    }, 15000)
+    }, 5500)
 
-    // Complete loading after 16.5 seconds
+    // Complete loading after 7 seconds
     const completeTimer = setTimeout(() => {
       onComplete()
-    }, 16500)
+    }, 7000)
 
     return () => {
       clearTimeout(textTimer)

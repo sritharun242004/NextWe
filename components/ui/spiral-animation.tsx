@@ -78,9 +78,14 @@ class AnimationController {
     private setupTimeline() {
         this.timeline
             .to(this, {
+                time: 0.35,
+                duration: 2,
+                ease: "none",
+                onUpdate: () => this.render()
+            })
+            .to(this, {
                 time: 1,
-                duration: 15,
-                repeat: -1,
+                duration: 5,
                 ease: "none",
                 onUpdate: () => this.render()
             })
