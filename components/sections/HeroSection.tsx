@@ -5,19 +5,14 @@ import { motion } from "framer-motion";
 import { ChevronRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ParticleBackground } from "@/components/ui/particle-background";
-import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import { TypewriterCycleEffect } from "@/components/ui/typewriter-effect";
 import { FloatingElements } from "@/components/ui/floating-elements";
 
 export function HeroSection() {
-  const words = [
-    { text: "We" },
-    { text: "Build" },
-    { text: "High-Performance", className: "text-[#a0ff4a]" },
-    { text: "Websites,", className: "text-[#a0ff4a]" },
-    { text: "Apps", className: "text-[#a0ff4a]" },
-    { text: "&" },
-    { text: "AI", className: "text-[#a0ff4a]" },
-    { text: "Solutions" },
+  const phrases = [
+    "Scalable Digital Marketing\n& Performance Systems",
+    "High-Performance Websites,\nApps & AI Solutions",
+    "Impactful UI/UX\n& Brand Experiences",
   ];
 
   return (
@@ -32,9 +27,13 @@ export function HeroSection() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-5xl mx-auto"
         >
-          <TypewriterEffect
-            words={words}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6"
+          <TypewriterCycleEffect
+            staticText="We Build "
+            phrases={phrases}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 max-w-6xl mx-auto"
+            typingSpeed={60}
+            deletingSpeed={35}
+            pauseDuration={2500}
           />
 
           <motion.h2

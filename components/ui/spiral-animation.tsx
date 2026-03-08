@@ -47,7 +47,6 @@ class AnimationController {
 
         // Initialize
         this.setupRandomGenerator()
-        this.createStars()
         this.setupTimeline()
     }
 

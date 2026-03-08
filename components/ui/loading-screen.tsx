@@ -1,7 +1,7 @@
 'use client'
 
 import { SpiralAnimation } from "@/components/ui/spiral-animation"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface LoadingScreenProps {
@@ -12,6 +12,20 @@ interface LoadingScreenProps {
 export function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [showText, setShowText] = useState(false)
   const [fadeOut, setFadeOut] = useState(false)
+  const onCompleteRef = useRef(onComplete)
+
+  // Keep ref up to date without triggering effects
+  useEffect(() => {
+    onCompleteRef.current = onComplete
+  }, [onComplete])
+
+  // Generate stable random positions to avoid hydration mismatch
+  const particlePositions = useMemo(() => {
+    return Array.from({ length: 6 }, (_, i) => ({
+      left: `${20 + ((i * 37 + 13) % 60)}%`,
+      top: `${30 + ((i * 23 + 7) % 40)}%`,
+    }))
+  }, [])
 
   useEffect(() => {
     // Show text after 0.5 seconds
@@ -26,7 +40,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
     // Complete loading after 7 seconds
     const completeTimer = setTimeout(() => {
-      onComplete()
+      onCompleteRef.current()
     }, 7000)
 
     return () => {
@@ -34,7 +48,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
       clearTimeout(fadeTimer)
       clearTimeout(completeTimer)
     }
-  }, [onComplete])
+  }, []) // No dependencies — timers run once on mount
 
   return (
     <div className="fixed inset-0 w-full h-full bg-black z-[9999] overflow-hidden">
@@ -114,7 +128,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
               {/* Floating particles around text */}
               <div className="absolute -inset-16 pointer-events-none">
-                {[...Array(6)].map((_, i) => (
+                {particlePositions.map((pos, i) => (
                   <motion.div
                     key={i}
                     animate={{
@@ -129,10 +143,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
                       delay: i * 0.3
                     }}
                     className="absolute w-2 h-2 bg-[#a0ff4a] rounded-full blur-sm"
-                    style={{
-                      left: `${20 + Math.random() * 60}%`,
-                      top: `${30 + Math.random() * 40}%`
-                    }}
+                    style={pos}
                   />
                 ))}
               </div>

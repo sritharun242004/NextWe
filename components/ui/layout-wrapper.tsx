@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Navbar } from "./navbar";
 import { Footer } from "./footer";
 import { LoadingScreen } from "./loading-screen";
@@ -26,12 +26,12 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
     }
   }, [pathname, isStudioRoute]);
 
-  const handleLoadingComplete = () => {
+  const handleLoadingComplete = useCallback(() => {
     setShowLoading(false);
     setHasShownLoading(true);
     // Mark as seen for this session
     sessionStorage.setItem('hasSeenLoading', 'true');
-  };
+  }, []);
 
   // Show loading screen
   if (showLoading && !hasShownLoading && !isStudioRoute) {
