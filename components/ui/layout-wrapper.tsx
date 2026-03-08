@@ -2,9 +2,14 @@
 
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useCallback } from "react";
+import dynamic from "next/dynamic";
 import { Navbar } from "./navbar";
 import { Footer } from "./footer";
 import { LoadingScreen } from "./loading-screen";
+
+const CustomCursor = dynamic(() => import("./custom-cursor").then(mod => ({ default: mod.CustomCursor })), {
+  ssr: false,
+});
 
 export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -46,6 +51,7 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   // For all other routes, render with navbar and footer
   return (
     <div className="bg-black">
+      <CustomCursor />
       <Navbar />
       <main className="min-h-screen">{children}</main>
       <Footer />

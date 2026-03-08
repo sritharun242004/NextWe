@@ -144,6 +144,12 @@
   --sidebar-ring: oklch(0.78 0.15 142);
 }
 
+/* Hide default cursor when custom cursor is active (desktop only) */
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
