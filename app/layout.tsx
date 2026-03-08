@@ -31,14 +31,6 @@ export const metadata: Metadata = {
       "We build scalable websites, high-performance apps & custom AI solutions that drive real business growth.",
     url: "https://next-we.vercel.app",
     siteName: "NextWe Studio",
-    images: [
-      {
-        url: "/logo/Favicon.png",
-        width: 1080,
-        height: 1080,
-        alt: "NextWe Studio Logo",
-      },
-    ],
     type: "website",
   },
   twitter: {
@@ -46,7 +38,6 @@ export const metadata: Metadata = {
     title: "NextWe Studio - AI & Digital Transformation Partner",
     description:
       "We build scalable websites, high-performance apps & custom AI solutions that drive real business growth.",
-    images: ["/logo/Favicon.png"],
   },
 };
 
