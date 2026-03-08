@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "NextWe Studio",
     images: [
       {
-        url: "/logo/logo1.png",
+        url: "/logo/Favicon.png",
         width: 1080,
         height: 1080,
         alt: "NextWe Studio Logo",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "NextWe Studio - AI & Digital Transformation Partner",
     description:
       "We build scalable websites, high-performance apps & custom AI solutions that drive real business growth.",
-    images: ["/logo/logo1.png"],
+    images: ["/logo/Favicon.png"],
   },
 };
 
